@@ -1,0 +1,16 @@
+{
+  "name": "js-test",
+  "version": "1.0.0",
+  "description": "js test for sky",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -- *-test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "sinon": "^6.1.5",
+    "chai": "^4.1.2"
+  }
+}
