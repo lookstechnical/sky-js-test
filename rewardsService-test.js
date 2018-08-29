@@ -1,8 +1,9 @@
 const expect = require('chai').expect;
 const {rewardsService} = require('./rewardsService');
 const {
-    EligibilityServiceStub,
+    CUSTOMER_INELIGIBLE,
     INVALID_ACCOUNT_ERROR,
+    EligibilityServiceStub,
     portfolio,
     relevantRewardsStub,
 } = require('./constants');
@@ -27,6 +28,7 @@ describe("Redeem service", () => {
 
         var response = rewardsService('20', portfolio, EligibilityServiceStub);
 
+        expect(EligibilityServiceStub.getCall(2).returnValue).to.equal(CUSTOMER_INELIGIBLE)
         expect(response).to.have.property('data').that.deep.equals([]);
         expect(response).to.have.property('errors').that.equals(null);
     })
